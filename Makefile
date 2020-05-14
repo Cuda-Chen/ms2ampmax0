@@ -2,10 +2,13 @@ DEBUG = 0
 
 CC = gcc
 EXEC = ms2ampmax0
-COMMON = -I./libmseed/ -I.
+#COMMON = -I./libmseed/ -I.
+COMMON = -I/usr/local
 CFLAGS =  -Wall
-LDFLAGS = -L./libmseed -Wl,-rpath,./libmseed
-LDLIBS = -Wl,-Bstatic -lmseed -Wl,-Bdynamic -lm
+#LDFLAGS = -L./libmseed -Wl,-rpath,./libmseed
+#LDLIBS = -Wl,-Bstatic -lmseed -Wl,-Bdynamic -lm
+LDFLAGS = -L/usr/local
+LDLIBS = -lmseed -lm
 
 OBJS = main.o min_max.o
 
@@ -18,7 +21,7 @@ endif
 all: $(EXEC)
 
 $(EXEC): $(OBJS)
-	$(MAKE) -C libmseed/ static
+	#$(MAKE) -C libmseed/ static
 	$(CC) $(COMMON) $(CFLAGS) $^ -o $@ $(LDFLAGS) $(LDLIBS)
 
 %.o: %.c
