@@ -13,7 +13,9 @@
 static void
 usage ()
 {
-  printf ("Usage: ./ms2ampmax <mseedfile>\n");
+  printf ("Usage: ./ms2ampmax [mseedfile]\n");
+  printf ("## Options ##\n"
+          " mseedfile       input miniSEED file\n");
   printf ("\nOutput format: \n");
   printf ("<maximum>\n");
 }

@@ -9,5 +9,5 @@ $ git clone https://github.com/Cuda-Chen/ms2ampmax0.git --recursive
 # Compile and Run
 ```
 $ make
-$ ./ms2ampmax0 <mseedfile>
+$ ./ms2ampmax0 [mseedfile]
 ```
